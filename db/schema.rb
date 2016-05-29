@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160524004542) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buckets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "user_name"
   end
 
-  add_index "comments", ["shot_id"], name: "index_comments_on_shot_id"
+  add_index "comments", ["shot_id"], name: "index_comments_on_shot_id", using: :btree
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "images_teaser"
   end
 
-  add_index "shots", ["user_id"], name: "index_shots_on_user_id"
+  add_index "shots", ["user_id"], name: "index_shots_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                       null: false
