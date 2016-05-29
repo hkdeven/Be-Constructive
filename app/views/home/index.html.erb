@@ -1,0 +1,205 @@
+  <header class="site-header overlay-black no-padding-bottom text-center bg-fixed" style="background-image: url(<%= asset_path('bg-header.jpg') %>">
+    <div class="container">
+        <h2>Be inspired, be</h2>
+        <h1><i><strong>CONSTRUCTIVE</strong></i></h1>
+        <br><br>
+        <div id="faq-search" class="form-group">
+            <i class="ti-search fa fa-hand-o-right"></i>
+            <%= form_tag(shots_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find your inspiration...", class: "form-control", name: "search", type: "text" %>
+            <% end %>
+        </div>
+      <br><br><br>
+    </div>
+  </header>
+
+  <!-- Main container -->
+  <main>
+    <!-- Staff picks -->
+    <section>
+      <div class="container">
+        <header class="section-header">
+          <span>Featured</span>
+          <h2>Staff Favorites</h2>
+          <p>Curated selection of awesome, inovative designs.</p>
+        </header>
+
+
+
+      <div class="row">
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(1) %>"><img src="<%= @shots[0].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[0].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(16) %>"><img src="<%=@shots[15].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[15].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(12) %>"><img src="<%=@shots[11].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[11].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(15) %>"><img src="<%=@shots[14].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[14].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(11) %>"><img src="<%=@shots[10].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[10].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(9) %>"><img src="<%=@shots[8].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[8].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+        <!-- see all button - directs ot all shots -->
+          <div class="col-xs-12 col-sm-4 col-md-offset-4">
+            <br><br>
+            <a class="btn btn-primary btn-block" href="<%= shots_path %>">See all images</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recent section -->
+    <section class="bg-white">
+      <div class="container">
+        <header class="section-header">
+          <span>Recent</span>
+          <h2>Freshest Uploads</h2>
+          <p>Newest content from our members around the world.</p>
+        </header>
+
+      <div class="row">
+        <!-- Shot -->
+        <% @shots.last(9).each do |shot| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_normal %>"></a>
+            </div>
+
+            <div class="shot-info">
+              <a href="<%= user_path(shot.user_id) %>"><img src="<%= shot.user.designer_avatar_url %>" alt='avatar'></a>
+              <h6><a href="<%= shot_path(shot.id) %>"><%= shot.title %></a></h6>
+              <p><time datetime="<%= shot.created_at %>"></time> Added <%= time_ago_in_words(shot.created_at) %> in <a href="<%= user_path(shot.user) %>"><%= shot.user.designer_username %></a></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <!-- See all button -->
+          <div class="col-xs-12 col-sm-4 col-md-offset-4">
+            <br><br>
+            <a class="btn btn-primary btn-block" href="<%= shots_path %>">See all</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured users -->
+    <section>
+      <div class="container">
+        <header class="section-header">
+          <span>The bests</span>
+          <h2>Featured users</h2>
+          <p>Our weekly selected users with popular shots</p>
+        </header>
+
+        <div class="row">
+          <!-- User widget -->
+          <% @users.last(4).each do |user| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="user-widget-mini">
+              <a href="<%= user_path(user) %>">
+              <%= image_tag user.designer_avatar_url , alt:'avatar' %></a>
+                <h5><a href="<%= user_path(user) %>">
+                  <%= user.designer_full_name %></a></h5>
+                  <p class="lead"><%= user.designer_username %></p>
+                    <small><%= user.designer_added_shots_count %></small>
+                  </div>
+                </div>
+              <% end %>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Facts section -->
+    <section class="section-sm no-border-bottom overlay-black" style="background-image: url(<%= asset_path('facts1.jpg') %>)">
+      <div class="container">
+
+        <div class="row">
+          <div class="counter color-alt col-md-3 col-sm-6">
+            <i class="fa fa-camera"></i>
+            <p><span data-from="0" data-to="6890"></span>+</p>
+            <h6>Shots</h6>
+          </div>
+
+          <div class="counter color-alt col-md-3 col-sm-6">
+            <i class="fa fa-user"></i>
+            <p><span data-from="0" data-to="1200"></span>+</p>
+            <h6>Members</h6>
+          </div>
+
+          <div class="counter color-alt col-md-3 col-sm-6">
+            <i class="fa fa-heart"></i>
+            <p><span data-from="0" data-to="36800"></span>+</p>
+            <h6>Likes</h6>
+          </div>
+
+          <div class="counter color-alt col-md-3 col-sm-6">
+            <i class="fa fa-comment"></i>
+            <p><span data-from="0" data-to="15400"></span>+</p>
+            <h6>Comments</h6>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>

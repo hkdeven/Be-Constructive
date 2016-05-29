@@ -1,0 +1,36 @@
+<%= form_for(@shot) do |f| %>
+  <% if @shot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shot.errors.count, "error") %> prohibited this shot from being saved:</h2>
+
+      <ul>
+      <% @shot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+    <!-- Shot -->
+
+    <!-- <% @shots.last(9).each do |shot| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="shot shot-small">
+        <div class="shot-preview">
+          <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_normal %>"></a>
+        </div>
+
+        <div class="shot-info">
+          <a href="<%= user_path(shot.user_id) %>"><img src="<%= shot.user.designer_avatar_url %>" alt='avatar'></a>
+          <h6><a href="<%= shot_path(shot.id) %>"><%= shot.title %></a></h6>
+          <p><time datetime="<%= shot.created_at %>"></time> Added <%= time_ago_in_words(shot.created_at) %> in <a href="<%= user_path(shot.user) %>"><%= shot.user.designer_username %></a></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    </div>
+
+  </div>
+</section> -->

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>CONSTRUCTIVE | empowered creativity</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <script src="https://use.fontawesome.com/3fa12692e9.js"></script>
+      <%= csrf_meta_tags %>
+  </head>
+
+    <body class="sticky-nav">
+      <!-- Navigation bar -->
+      <nav class="navbar">
+        <div class="container">
+          <!-- Logo and links -->
+          <div class="pull-left">
+            <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="fa fa-bars"></i></a>
+
+            <div class="constructive-logo logo">
+              <%= image_tag 'logo.png', alt:'constructive-logo' %>
+            </div>
+
+            <ul class="nav-menu">
+              <li><%= link_to 'Home', root_path %></li>
+              <li>
+                <%= link_to 'Shots', shots_path %>
+                <ul>
+                  <li><%= link_to 'Popular', shots_path %></li>
+                  <li><%= link_to 'Tags', shots_path %></li>
+                  <li><%= link_to 'Buckets', shots_path %></li>
+                  <li><%= link_to 'Designers', users_path %></li>
+                  <li><%= link_to 'Search', root_path, class:"active" %></li>
+                </ul>
+              </li>
+              <li>
+                <%= link_to 'Designers', users_path %></li>
+              <li>
+                <%= link_to 'Buckets', shots_path %></li>
+              <li>
+                <%= link_to 'Tags', shots_path %></li>
+              <li>
+                <a href="#">Resources</a>
+                <ul>
+                  <li><a href="#">Tech News</a></li>
+                  <li><a class="active" href="#">Learning</a></li>
+                </ul>
+              </li>
+
+              <!-- Save for later?
+              <li>
+                <a href="#">User account</a>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Followers - 1</a></li>
+                  <li><a href="#">Followers - 2</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a class="active" href="#"><strong>Register</strong></a></li>
+                  <li><a href="#">Forgot password</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </div>
+
+          <!-- User account and action buttons, top right  -->
+          <div class="pull-right">
+            <a class="btn-navbar search-opener" href="#"><i class="fa fa-search"></i></a></a>
+
+            <div class="dropdown user-account">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <%= image_tag 'avatar-1.jpg', alt:'avatar' %>
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Search screen -->
+          <div class="search-screen closed">
+            <button class="search-closer"><i class="fa fa-times"></i></button>
+              <%= form_tag(shots_path, :method => "get", class: "search-form") do %>
+              <%= text_field_tag :search, params[:search], name: "search", type: "text", autocomplete: "off", placeholder: "Find your inspiration..." %>
+              <% end %>
+          </div>
+
+        </div>
+      </nav>
+
+    <%= yield %>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-5">
+        <h6>About</h6>
+        <p class="text-justify"><strong>CONSTRUCTIVE</strong> is a powerful, responsive, and high-performance image and designer resource specifically designed for developers. Made by students at <a href="#" target="_blank">Wyncode Academy</a> for <a href="#" target="_blank">The Last Mile</a>. Learn more about the life-saving work and success of <a href="#" target="_blank">The Last Mile</a>.</p>
+        <p><strong><i>Be inspired, be CONSTRUCTIVE.</i></strong></p>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-2">
+        <h6>Company</h6>
+        <ul class="footer-links">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-2">
+        <h6>Support</h6>
+        <ul class="footer-links">
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Official blog</a></li>
+          <li><a href="#">Ask question</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <h6>Newsletter</h6>
+        <p><strong>Subscribe</strong> to The Last Mile newsletter for updates:</p>
+        <br>
+        <input type="text" class="form-control" placeholder="Enter your email address">
+        <button class="btn btn-primary btn-sm btn-block" type="button"><i class="fa fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+
+    <hr>
+  </div>
+
+  <!-- Very bottom section - Do we even need this? -->
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="#">CODE FLL, Inc.</a></p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+</footer>
+
+<!-- Back to top button -->
+<a id="scroll-up" href="#"><i class="fa fa-chevron-up"></i></a>
+
+<!-- <%# if Rails.env.development? %>
+<%#= console %>
+<%#end%> -->
+
+</body>
+</html>

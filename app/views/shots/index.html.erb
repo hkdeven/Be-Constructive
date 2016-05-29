@@ -1,0 +1,40 @@
+<section class="bg-white">
+    <div class="container">
+      <header class="section-header">
+        <h2>Freshest Uploads</h2>
+          <p>Newest content from our members around the world.</p>
+      </header>
+
+      <!-- Attempted search screen -->
+          <!-- <div id="faq-search" class="form-group">
+            <i class="ti-search fa fa-hand-o-right"></i>
+              <%= form_tag(shots_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], type: "text", name: "search", class: "form-control", :name => nil, placeholder: "Find your inspiration..." %>
+              <% end %>
+          </div> -->
+
+          <div class="row">
+              <!-- Shot -->
+              <% @shots.each do |shot| %>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="shot shot-small">
+                  <div class="shot-preview">
+                    <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_normal %>"></a>
+                  </div>
+
+                  <div class="shot-info">
+                    <a href="<%= user_path(shot) %>"><img src="<%= shot.user.designer_avatar_url %>" alt='avatar'></a>
+                    <h6><a href="<%= shot_path(shot.id) %>"><%= shot.title %></a></h6>
+                    <p><time datetime="<%= shot.created_at %>"></time> Added <%= time_ago_in_words(shot.created_at) %> by <a href="<%= user_path(shot) %>"><%= shot.user.designer_username %></a></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+
+            </div>
+
+          </div>
+        </section>
+      <br>
+  </section>
+</div>

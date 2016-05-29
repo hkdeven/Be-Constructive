@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: MyString
+  description: MyString
+  width: MyString
+  height: MyString
+  tags: MyString
+  image_url: MyString
+  image_path: MyString
+
+two:
+  id: 1
+  title: MyString
+  description: MyString
+  width: MyString
+  height: MyString
+  tags: MyString
+  image_url: MyString
+  image_path: MyString

@@ -1,0 +1,97 @@
+<!-- Main container -->
+<main>
+
+  <!-- Profile head -->
+  <div class="profile-head">
+    <div class="container">
+      <%= image_tag @user.designer_avatar_url , alt:'avatar' %>
+      <h5><a href="#"><%= @user.designer_username %></a></h5>
+      <p><i class="fa fa-map-marker"></i> <%= @user.designer_location %></p>
+      <p class="lead"><%= @user.designer_full_name %></p>
+      <p><%= raw @user.designer_bio %></p>
+
+      <ul class="social-icons">
+        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="<%= @user.designer_home_url %>" target="_blank"><i class="fa fa-globe"></i></a></li>
+      </ul>
+
+      <div class="row bottom-bar">
+        <ul class="col-sm-12 col-md-6 action-buttons">
+          <li><a class="btn btn-success btn-outline btn-sm" href="#">Follow</a></li>
+        </ul>
+
+        <ul class="col-sm-12 col-md-6 tab-list">
+          <li class="active"><a href="#"><i>Shots</i><span>125</span></a></li>
+          <li class="hidden-xs"><a ><i>Likes</i><span>1.6K</span></a></li>
+          <li><a ><i>Followers</i><span><%= @user.designer_follower_count %></span></a></li>
+          <li><a ><i>Following</i><span><%= @user.designer_is_following_count %></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- User shots -->
+  <section class="no-border-bottom section-sm">
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Shot -->
+      <% @user.shots.each do |shot| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="shot shot-minimal">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(shot) %>"><img src="<%= shot.images_normal %>" alt=""></a>
+
+              <a class="text-overlay" href="<%= shot_path(shot) %>">
+                <span class="heading"><%= shot.title %></span>
+                <time datetime="<%= shot.created_at %>">
+                  Added <%= time_ago_in_words(shot.created_at) %></time>
+              </a>
+            </div>
+
+            <div class="shot-detail">
+              <div class="shot-info">
+                <p><a href="<%= shot_path(shot) %>"><%= shot.title %></a></p>
+              </div>
+
+              <ul class="shot-stats">
+                <li><i class="fa fa-eye"></i><span><%= shot.viewcount %></span></li>
+                <li><a href="shot-gallery.html#comments"><i class="fa fa-comments"></i><span><%= shot.comments_count %></span></a></li>
+                <li><a class="like" href="#"><i class="fa fa-heart-o"></i><span><%= shot.likes_count %></span></a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+
+      <!-- Pagination visual done, but no time to make functional-->
+      <!-- Icons broken -->
+      <!-- <nav class="text-center">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <i class="ti-angle-left"></i>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li class="active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <i class="ti-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav> -->
+
+    </div>
+  </section>
+</main>

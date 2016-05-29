@@ -1,0 +1,148 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Main container -->
+<main>
+
+  <section class="no-border-bottom">
+    <div class="container">
+      <header class="section-header">
+        <h3><%= @shot.title %></h3>
+        <p>Posted <%= time_ago_in_words(@shot.created_at) %> by <%= link_to @shot.user.designer_username, user_path(@shot.user) %></p>
+      </header>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+
+          <!-- Shot and details -->
+          <div class="card no-margin-top">
+            <div class="card-block">
+
+              <img src="<%= @shot.images_hidpi %>" width="700" data-lity>
+
+              <hr>
+
+              <td><%= raw @shot.description %></td>
+
+            </div>
+          </div>
+
+          <!-- Comments -->
+          <div id="comments" class="card">
+            <div class="card-header">
+              <h6>Comments (<%= @shot.comments_count %>)</h6>
+
+              <div class="comment-pagination">
+                <a class="prev" ><i class="fa fa-chevron-left"></i></a>
+                <a class="next" ><i class="fa fa-chevron-right"></i></a>
+              </div>
+            </div>
+
+            <ul class="comments">
+
+              <% @comments.each do |comments| %>
+              <li>
+                <img src="<%= comments.user_avatar_url %>">
+                <h6><%= comments.user_name %> <time><%= time_ago_in_words(comments.comment_created_at) %></time></h6>
+                <p><%= raw comments.body %></p>
+              </li>
+              <% end %>
+            </ul>
+
+            <form class="comment-form">
+              <%= image_tag 'avatar-1.jpg', alt:'' %>
+              <p><input type="text" class="form-control" placeholder="Leave a comment..."></p>
+            </form>
+
+          </div>
+        </div>
+
+        <aside class="col-xs-12 col-md-4 shot-sidebar">
+          <!-- User widget -->
+          <div class="sidebar-block">
+            <div class="shot-by-widget">
+              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user.designer_avatar_url , alt:'avatar' %></a>
+              <a class="username" href="<%= user_path(@shot) %>"><%= @shot.user.designer_username %></a>
+              <%= content_tag(:p, @shot.user.designer_full_name, class:'title' ) %>
+              <p class="subtitle"><%= raw @shot.user.designer_bio %></p>
+              <a href="<%= @shot.user.designer_home_url %>" target="_blank">My Website</a>
+
+              <ul class="user-stats">
+                <li><a href="<%= user_path(@shot) %>"><i>Shots</i><span><%= @shot.user.designer_added_shots_count %></span></a></li>
+                <li><a href="<%= user_path(@shot) %>"><i>Followers</i><span><%= @shot.user.designer_follower_count %></span></a></li>
+                <li><a href="<%= user_path(@shot) %>"><i>Following</i><span><%= @shot.user.designer_is_following_count %></span></a></li>
+              </ul>
+              <a class="btn btn-success btn-sm" href="#">Following</a>
+            </div>
+          </div>
+
+          <!-- Shot stats -->
+          <div class="sidebar-block">
+            <ul class="single-shot-stats">
+              <li><i class="fa fa-eye"></i>
+                <span><%= @shot.viewcount %></span>
+              </li>
+              <li><a class="like" href="#"><i class="fa fa-heart"></i>
+                <span><%= @shot.likes_count %></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Share -->
+          <!-- <div class="sidebar-block">
+            <h6>Share on</h6>
+            <ul class="social-icons text-center">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div> -->
+
+          <!-- Details -->
+          <div class="sidebar-block">
+            <h6>Details</h6>
+            <dl class="half-half">
+              <dt>Size</dt>
+              <dd><%= @shot.width %> x <%= @shot.height %></dd>
+
+              <dt>Buckets</dt>
+              <dd><%= @shot.buckets_count %></dd>
+
+              <dt>Location</dt>
+              <dd><%= @shot.user.designer_location %></dd>
+
+            </dl>
+          </div>
+
+          <!-- Tags -->
+          <div class="sidebar-block">
+            <h6>Tags</h6>
+            <div class="tag-list">
+              <% JSON.parse(@shot.tags).each do |tag| %>
+                <%= link_to tag, shots_path %>
+              <% end %>
+            </div>
+          </div>
+
+
+          <!-- More shots -->
+          <div class="sidebar-block">
+            <h6>Similiar photos</h6>
+              <ul class="photo-list cols-2">
+                <% @shots.search(@shot.tags) do |simshot| %>
+                  <li>
+                    <a href="<%= shot_path(@shot) %>">
+                      <img src="<%= simshot.images_normal %>"></a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+        </aside>
+      </div>
+      <%= link_to 'Edit', edit_shot_path(@shot) %> |
+      <%= link_to 'Back', shots_path %>
+    </div>
+  </section>
+</main>
