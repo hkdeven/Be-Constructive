@@ -1,6 +1,6 @@
 include Clockwork
 
-every(15.seconds, 'Dribbble Rake Task'){
+every(25.seconds, 'Dribbble Rake Task'){
     `rake dribbble:get_recent`
 }
 
