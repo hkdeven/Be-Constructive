@@ -17,7 +17,7 @@
           <div class="card no-margin-top">
             <div class="card-block">
 
-              <img src="<%= @shot.images_hidpi %>" width="700" data-lity>
+              <img src="<%= @shot.localshotimage %>" width="700" data-lity>
 
               <hr>
 
@@ -41,7 +41,7 @@
 
               <% @comments.each do |comments| %>
               <li>
-                <img src="<%= comments.user_avatar_url %>">
+                <img src="<%= comments.localcommentimage %>">
                 <h6><%= comments.user_name %> <time><%= time_ago_in_words(comments.comment_created_at) %></time></h6>
                 <p><%= raw comments.body %></p>
               </li>
@@ -60,7 +60,7 @@
           <!-- User widget -->
           <div class="sidebar-block">
             <div class="shot-by-widget">
-              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user.designer_avatar_url , alt:'avatar' %></a>
+              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user.localuserimage , alt:'avatar' %></a>
               <a class="username" href="<%= user_path(@shot) %>"><%= @shot.user.designer_username %></a>
               <%= content_tag(:p, @shot.user.designer_full_name, class:'title' ) %>
               <p class="subtitle"><%= raw @shot.user.designer_bio %></p>

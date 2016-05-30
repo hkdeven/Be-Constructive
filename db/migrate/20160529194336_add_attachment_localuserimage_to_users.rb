@@ -1,8 +1,6 @@
 class AddAttachmentLocaluserimageToUsers < ActiveRecord::Migration
   def self.up
-    change_table :users do |t|
-      t.attachment :localuserimage
-    end
+    add_attachment :users, :localuserimage
   end
 
   def self.down

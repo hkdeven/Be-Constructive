@@ -1,8 +1,6 @@
 class AddAttachmentLocalshotimageToShots < ActiveRecord::Migration
   def self.up
-    change_table :shots do |t|
-      t.attachment :localshotimage
-    end
+    add_attachment :shots, :localshotimage
   end
 
   def self.down

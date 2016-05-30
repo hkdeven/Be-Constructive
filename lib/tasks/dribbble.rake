@@ -1,3 +1,6 @@
+require 'paperclip'
+require 'open-uri'
+
 namespace :dribbble do
   desc "TODO"
   task get_recent: :environment do
@@ -12,9 +15,11 @@ namespace :dribbble do
       users_dribbbleid = s['user']['id']
       shots_dribbbleid = s['user']['id']
 
-      user_url_value = s['user']['avatar_url']
-      shot_url_value = s["images"]["hidpi"]
-      comment_url_value = s['user']['avatar_url']
+      user_url_value = (s['user']['avatar_url'].split("?").first)
+      shot_url_value =  s["images"]["hidpi"].nil? ? s["images"]["normal"].split("?").first : s["images"]["hidpi"].split("?").first
+
+      upath = URI.parse(user_url_value).open
+      spath = URI.parse(shot_url_value).open
 
       existing_user = User.where(designer_id: users_dribbbleid)
 
@@ -40,7 +45,7 @@ namespace :dribbble do
           designer_list_of_followers_url: s['user']['followers_url'],
           designer_following_list_url: s['user']['following_url'],
           designer_list_of_shots_url: s['shots_url'],
-          localuserimage: URI.parse(user_url_value)
+          localuserimage: upath
           )
         newshot = Shot.create(
           dribbble_id: s["id"],
@@ -66,14 +71,15 @@ namespace :dribbble do
           animated: s['animated'],
           tags: s['tags'],
           user_id: newuser.id,
-          localshotimage: URI.parse(shot_url_value)
+          localshotimage: spath
           )
         commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
         comments = JSON.parse(commentresponse.body)
         comments.each do |c|
         comments_dribbbleid = c["id"]
 
-        comment_url_value = c["user"]["avatar_url"]
+        comment_url_value = (c['user']['avatar_url'].split("?").first)
+        cpath = URI.parse(comment_url_value).open
 
         existing_comment = Comment.where(comment_id: comments_dribbbleid)
 
@@ -86,7 +92,7 @@ namespace :dribbble do
             user_id: c["user"]["id"],
             user_name: c['user']['name'],
             shot_id: newshot.id,
-            localcommentimage: URI.parse(comment_url_value)
+            localcommentimage: cpath
             )
           end
         end
@@ -120,7 +126,7 @@ namespace :dribbble do
               animated: s['animated'],
               tags: s['tags'],
               user_id: existing_user[0].id,
-              localshotimage: URI.parse(shot_url_value)
+              localshotimage: spath
               )
 
             commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
@@ -141,7 +147,7 @@ namespace :dribbble do
                 user_id: c["user"]["id"],
                 user_name: c['user']['name'],
                 shot_id: newshot.id,
-                localcommentimage: URI.parse(comment_url_value)
+                localcommentimage: cpath
                 )
               end
             end

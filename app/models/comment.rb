@@ -2,6 +2,8 @@ class Comment < ActiveRecord::Base
   # attr_accessor :localcommentimage_api_url
 
   belongs_to :shot
-  # has_attached_file :localcommentimage
-  # validates_attachment_content_type :localcommentimage, content_type: /\Aimage\/.*\Z/
+
+  validates :localcommentimage,
+            attachment_content_type: { content_type: /\Aimage\/.*\Z/}
+  has_attached_file :localcommentimage
 end

@@ -3,8 +3,10 @@ class Shot < ActiveRecord::Base
   #
   belongs_to :user
   has_many :comments
-  # has_attached_file :localshotimage
-  # validates_attachment_content_type :localshotimage, content_type: /\Aimage\/.*\Z/
+
+  validates :localshotimage,
+            attachment_content_type: { content_type: /\Aimage\/.*\Z/}
+  has_attached_file :localshotimage
 
   def self.search(query, options={})
     where("title LIKE ? OR description LIKE ? OR tags LIKE ?", ''"%#{query}%"'', ''"%#{query}%"'', ''"%#{query}%"'')

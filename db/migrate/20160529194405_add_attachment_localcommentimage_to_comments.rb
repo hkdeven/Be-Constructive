@@ -1,8 +1,6 @@
 class AddAttachmentLocalcommentimageToComments < ActiveRecord::Migration
   def self.up
-    change_table :comments do |t|
-      t.attachment :localcommentimage
-    end
+    add_attachment :comments, :localcommentimage
   end
 
   def self.down
