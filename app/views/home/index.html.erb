@@ -25,72 +25,77 @@
         </header>
 
       <div class="row">
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img">
-                <%= link_to( image_tag(@shots.find_by_id(7).localshotimage), shot_path(7)) %>
-                <span class="like liked"><%= @shots.find_by_id(7).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(6) %>">
+              <%= image_tag(@shots.find_by_id(6).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(6).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(11).localshotimage), shot_path(11)) %>
-                <span class="like liked"><%= @shots.find_by_id(11).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(11) %>">
+              <%= image_tag(@shots.find_by_id(11).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(11).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(10).localshotimage), shot_path(10)) %>
-                <span class="like liked"><%= @shots.find_by_id(10).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(10) %>">
+              <%= image_tag(@shots.find_by_id(10).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(10).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(1).localshotimage), shot_path(1)) %>
-                <span class="like liked"><%= @shots.find_by_id(1).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(1) %>">
+              <%= image_tag(@shots.find_by_id(1).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(1).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(2).localshotimage), shot_path(2)) %>
-                <span class="like liked"><%= @shots.find_by_id(2).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(3) %>">
+              <%= image_tag(@shots.find_by_id(3).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(3).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).localshotimage), shot_path(12)) %>
-                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
-                <span class="black-overlay"></span></a>
-              </div>
+        <!-- Shot -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="shot shot-small">
+            <div class="shot-preview">
+              <a class="img" href="<%= shot_path(9) %>">
+              <%= image_tag(@shots.find_by_id(9).localshotimage) %>
+              <span class="like liked"><%= @shots.find_by_id(9).likes_count %></span>
+              <span class="black-overlay"></span></a>
             </div>
           </div>
+        </div>
 
         <!-- see all button - directs ot all shots -->
           <div class="col-xs-12 col-sm-4 col-md-offset-4">
