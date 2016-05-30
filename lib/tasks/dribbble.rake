@@ -40,7 +40,7 @@ namespace :dribbble do
           designer_list_of_followers_url: s['user']['followers_url'],
           designer_following_list_url: s['user']['following_url'],
           designer_list_of_shots_url: s['shots_url'],
-          localuserimage: URI.parse(user_url_value).open
+          localuserimage: URI.parse(user_url_value)
           )
         newshot = Shot.create(
           dribbble_id: s["id"],
@@ -66,7 +66,7 @@ namespace :dribbble do
           animated: s['animated'],
           tags: s['tags'],
           user_id: newuser.id,
-          localshotimage: URI.parse(shot_url_value).open
+          localshotimage: URI.parse(shot_url_value)
           )
         commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
         comments = JSON.parse(commentresponse.body)
@@ -86,7 +86,7 @@ namespace :dribbble do
             user_id: c["user"]["id"],
             user_name: c['user']['name'],
             shot_id: newshot.id,
-            localcommentimage: URI.parse(comment_url_value).open
+            localcommentimage: URI.parse(comment_url_value)
             )
           end
         end
@@ -120,7 +120,7 @@ namespace :dribbble do
               animated: s['animated'],
               tags: s['tags'],
               user_id: existing_user[0].id,
-              localshotimage: URI.parse(shot_url_value).open
+              localshotimage: URI.parse(shot_url_value)
               )
 
             commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
@@ -141,7 +141,7 @@ namespace :dribbble do
                 user_id: c["user"]["id"],
                 user_name: c['user']['name'],
                 shot_id: newshot.id,
-                localcommentimage: URI.parse(comment_url_value).open
+                localcommentimage: URI.parse(comment_url_value)
                 )
               end
             end

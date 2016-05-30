@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'users' => 'users#index'
-  # get 'shots/:id/comments' => 'Shots#comments', :as => :shot_comments
+  get "/resources/:resource" => "resources#show"
 
 end
