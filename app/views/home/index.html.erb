@@ -24,15 +24,14 @@
           <p>Curated selection of awesome, inovative designs.</p>
         </header>
 
-
-
       <div class="row">
           <!-- Shot -->
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(1) %>"><img src="<%= @shots[0].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[0].likes_count %></span>
+                <a class="img">
+                <%= link_to( image_tag(@shots.find_by_id(1).images_hidpi), shot_path(1)) %>
+                <span class="like liked"><%= @shots.find_by_id(1).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -42,8 +41,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(16) %>"><img src="<%=@shots[15].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[15].likes_count %></span>
+                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).images_hidpi), shot_path(12)) %>
+                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -53,8 +52,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(12) %>"><img src="<%=@shots[11].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[11].likes_count %></span>
+                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).images_hidpi), shot_path(12)) %>
+                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -64,8 +63,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(15) %>"><img src="<%=@shots[14].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[14].likes_count %></span>
+                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).images_hidpi), shot_path(12)) %>
+                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -75,8 +74,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(11) %>"><img src="<%=@shots[10].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[10].likes_count %></span>
+                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).images_hidpi), shot_path(12)) %>
+                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -86,8 +85,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="<%= shot_path(9) %>"><img src="<%=@shots[8].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[8].likes_count %></span>
+                <a class="img" ><%= link_to( image_tag(@shots.find_by_id(12).images_hidpi), shot_path(12)) %>
+                <span class="like liked"><%= @shots.find_by_id(12).likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -119,7 +118,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="shot shot-small">
             <div class="shot-preview">
-              <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_normal %>"></a>
+              <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_hidpi %>"></a>
             </div>
 
             <div class="shot-info">

@@ -14,6 +14,7 @@ gem 'hirb'
 gem 'seed_dump'
 gem 'rails-erd'
 gem 'clockwork'
+gem "paperclip", "~> 5.0.0.beta1"
 
 group :development, :test do
   gem 'byebug'

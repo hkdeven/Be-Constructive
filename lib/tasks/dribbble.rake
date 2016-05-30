@@ -2,14 +2,8 @@ namespace :dribbble do
   desc "TODO"
   task get_recent: :environment do
 
-#URL API CALL FOR TOP 12 MOST-POPULAR SHOTS
+    #URL API CALL FOR TOP 12 MOST-POPULAR SHOTS
     url="https://api.dribbble.com/v1/shots/?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
-
-#URL API CALL FOR TOP 12 MOST-RECENT SHOTS
-    # url="https://api.dribbble.com/v1/shots/?recent&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
-
-#URL API CALL FOR SPECIFIC USERS SHOTS - BUT WHOLE SYNTAX NEEDS TO BE ADDED BELOW TO MAKE FUNCTIONAL
-    # url="https://api.dribbble.com/v1/users/5025/?shots&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
     response = HTTParty.get(url)
     recent_shots = JSON.parse(response.body)
@@ -18,6 +12,9 @@ namespace :dribbble do
       users_dribbbleid = s['user']['id']
       shots_dribbbleid = s['user']['id']
 
+      user_url_value = s['user']['avatar_url']
+      shot_url_value = s["images"]["hidpi"]
+      comment_url_value = s['user']['avatar_url']
 
       existing_user = User.where(designer_id: users_dribbbleid)
 
@@ -42,7 +39,8 @@ namespace :dribbble do
           designer_added_shots_count: s['user']['shots_count'],
           designer_list_of_followers_url: s['user']['followers_url'],
           designer_following_list_url: s['user']['following_url'],
-          designer_list_of_shots_url: s['shots_url']
+          designer_list_of_shots_url: s['shots_url'],
+          localuserimage: URI.parse(user_url_value).open
           )
         newshot = Shot.create(
           dribbble_id: s["id"],
@@ -67,12 +65,15 @@ namespace :dribbble do
           projects_url: s['projects_url'],
           animated: s['animated'],
           tags: s['tags'],
-          user_id: newuser.id
+          user_id: newuser.id,
+          localshotimage: URI.parse(shot_url_value).open
           )
         commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
         comments = JSON.parse(commentresponse.body)
         comments.each do |c|
         comments_dribbbleid = c["id"]
+
+        comment_url_value = c["user"]["avatar_url"]
 
         existing_comment = Comment.where(comment_id: comments_dribbbleid)
 
@@ -84,7 +85,8 @@ namespace :dribbble do
             user_avatar_url: c["user"]["avatar_url"],
             user_id: c["user"]["id"],
             user_name: c['user']['name'],
-            shot_id: newshot.id
+            shot_id: newshot.id,
+            localcommentimage: URI.parse(comment_url_value).open
             )
           end
         end
@@ -117,12 +119,15 @@ namespace :dribbble do
               projects_url: s['projects_url'],
               animated: s['animated'],
               tags: s['tags'],
-              user_id: existing_user[0].id
+              user_id: existing_user[0].id,
+              localshotimage: URI.parse(shot_url_value).open
               )
 
             commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
             comments = JSON.parse(commentresponse.body)
             comments.each do |c|
+
+            comment_url_value = c["user"]["avatar_url"]
 
             comments_dribbbleid = c["id"]
             existing_comment = Comment.where(comment_id: comments_dribbbleid)
@@ -135,7 +140,8 @@ namespace :dribbble do
                 user_avatar_url: c["user"]["avatar_url"],
                 user_id: c["user"]["id"],
                 user_name: c['user']['name'],
-                shot_id: newshot.id
+                shot_id: newshot.id,
+                localcommentimage: URI.parse(comment_url_value).open
                 )
               end
             end
@@ -144,3 +150,10 @@ namespace :dribbble do
     end
   end
 end
+
+
+#URL API CALL FOR TOP 12 MOST-RECENT SHOTS
+    # url="https://api.dribbble.com/v1/shots/?recent&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+
+#URL API CALL FOR SPECIFIC USERS SHOTS - BUT WHOLE SYNTAX NEEDS TO BE ADDED BELOW TO MAKE FUNCTIONAL
+    # url="https://api.dribbble.com/v1/users/5025/?shots&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"

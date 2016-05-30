@@ -20,8 +20,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    #@comment = Comment.new(params[:post])
+    #@comment = Comment.new(params[:post]) original
     @comment = user_id.comments.build(params[:post])
+    # @comment = Comment.create( comment_params ) version model for paperclip
 
       respond_to do |format|
       if @comment.save
@@ -45,4 +46,10 @@ class CommentsController < ApplicationController
       end
     end
   end
+
+  def user_params
+  # params.require(:user).permit(:avatar) paperclip recommended format
+    params.require(:comment)
+  end
+
 end

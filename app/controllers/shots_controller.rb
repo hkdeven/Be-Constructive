@@ -1,7 +1,6 @@
 class ShotsController < ApplicationController
   # before_action :set_shot, only: [:show, :edit, :update, :destroy]
 
-  # GET /shots
   def index
     @users = User.all
     @shots = Shot.all
@@ -13,7 +12,6 @@ class ShotsController < ApplicationController
     end
   end
 
-  # GET /shots/1
   def show
     @shot = Shot.find(params[:id])
     @users = User.all
@@ -22,20 +20,18 @@ class ShotsController < ApplicationController
     @comments = @shot.comments
   end
 
-  # GET /shots/new
   def new
     @shot = Shot.new
   end
 
-  # GET /shots/1/edit
   def edit
     @shot = Shot.find(params[:id])
     @comment = Comment.find(params[:id])
   end
 
-  # POST /shots
   def create
     @shot = Shot.new(shot_params)
+    # @user = User.create( user_params ) paperclip recommended format
 
     respond_to do |format|
       if @shot.save
@@ -48,7 +44,6 @@ class ShotsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /shots/1
   def update
     respond_to do |format|
       if @shot.update(shot_params)
@@ -61,7 +56,6 @@ class ShotsController < ApplicationController
     end
   end
 
-  # DELETE /shots/1
   def destroy
     @shot.destroy
     respond_to do |format|
@@ -71,13 +65,14 @@ class ShotsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_shot
-      @shot = Shot.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def shot_params
-      params.require(:shot).permit(:id, :title, :description, :width, :height, :tags, :image_url, :image_path)
-    end
+  def set_shot
+    @shot = Shot.find(params[:id])
+  end
+
+  def shot_params
+    # params.require(:user).permit(:avatar) paperclip recommended format
+    params.require(:shot).permit(:id, :title, :description, :width, :height, :tags, :image_url, :image_path)
+  end
+
 end

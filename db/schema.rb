@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524004542) do
+ActiveRecord::Schema.define(version: 20160529194405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,17 @@ ActiveRecord::Schema.define(version: 20160524004542) do
   create_table "comments", force: :cascade do |t|
     t.string   "comment_id"
     t.integer  "shot_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "comment_created_at"
     t.string   "body"
     t.string   "user_avatar_url"
     t.string   "user_id"
     t.string   "user_name"
+    t.string   "localcommentimage_file_name"
+    t.string   "localcommentimage_content_type"
+    t.integer  "localcommentimage_file_size"
+    t.datetime "localcommentimage_updated_at"
   end
 
   add_index "comments", ["shot_id"], name: "index_comments_on_shot_id", using: :btree
@@ -44,8 +48,8 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "image_url"
     t.string   "image_path"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "viewcount"
     t.integer  "likes_count"
     t.integer  "comments_count"
@@ -85,6 +89,10 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "images_hidpi"
     t.string   "images_normal"
     t.string   "images_teaser"
+    t.string   "localshotimage_file_name"
+    t.string   "localshotimage_content_type"
+    t.integer  "localshotimage_file_size"
+    t.datetime "localshotimage_updated_at"
   end
 
   add_index "shots", ["user_id"], name: "index_shots_on_user_id", using: :btree
@@ -111,6 +119,10 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "designer_list_of_followers_url"
     t.string   "designer_following_list_url"
     t.string   "designer_list_of_shots_url"
+    t.string   "localuserimage_file_name"
+    t.string   "localuserimage_content_type"
+    t.integer  "localuserimage_file_size"
+    t.datetime "localuserimage_updated_at"
   end
 
 end
