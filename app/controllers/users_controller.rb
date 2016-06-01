@@ -66,7 +66,7 @@ private
 
   def user_params
     # params.require(:user).permit(:avatar) paperclip recommended format
-    params.fetch(:user, {})
+    params.fetch(:user, {}).permit(:localuserimage)
     # params.require(:user)
   end
 

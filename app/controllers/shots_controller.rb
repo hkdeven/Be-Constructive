@@ -72,7 +72,7 @@ class ShotsController < ApplicationController
 
   def shot_params
     # params.require(:user).permit(:avatar) paperclip recommended format
-    params.require(:shot).permit(:id, :title, :description, :width, :height, :tags, :image_url, :image_path)
+    params.require(:shot).permit(:id, :title, :description, :width, :height, :tags, :image_url, :image_path, :localshotimage)
   end
 
 end

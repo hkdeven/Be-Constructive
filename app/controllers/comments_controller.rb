@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
 
   def user_params
   # params.require(:user).permit(:avatar) paperclip recommended format
-    params.require(:comment)
+    params.require(:comment).permit(:localcommentimage)
   end
 
 end
