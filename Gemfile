@@ -16,7 +16,7 @@ gem 'rails-erd'
 gem 'clockwork'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'rails_12factor'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '~> 2.0'
 
 group :development, :test do
   gem 'byebug'
