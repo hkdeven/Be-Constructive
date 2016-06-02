@@ -5,7 +5,7 @@ Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive w
 Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided and setup instructions below to run your own version of this dynamic application.
 
 --------------------------------------
-![screenshothomepage](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.09%20PM.png?raw=true)
+![screenshothomepage](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.09%20PM.png?raw=true)    
 --------------------------------------
 
 ## THE PROBLEM
@@ -77,25 +77,26 @@ In your browser visit the `localhost` address identified in your terminal, typic
 ## Screenshots of the Application
 
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.27%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.48%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.13%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.45%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.06%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.25%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.39%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.55%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.47.04%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.47.19%20PM.png?raw=true)
---------------------------------------
+--------------------------------------    
+
 ## About Constructive
 ![logo](http://s33.postimg.org/xxaj6bl7z/master_logo.png)    
 Be inspired, be CONSTRUCTIVE.    
