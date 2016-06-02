@@ -49,4 +49,25 @@ rake db:migrate
 
 # The Dribbble API
 
-A majority of the content is compiled using the Dribbble API. Please note that you must register your application and authenticate with either OAuth or your API client access token when making requests. Follow the details outlined in depth at[developer.dribbble.com](http://developer.dribbble.com/v1/).
+A majority of the content is compiled using the Dribbble API. Please note that you must register your application and authenticate with either OAuth or your API client access token when making requests. Follow the details outlined in depth at [developer.dribbble.com](http://developer.dribbble.com/v1/). Modify the `Be-Constructive/lib/tasks/dribbble.rake' file with your new API keys from Dribbble.
+
+Be sure you're storing your API keys securely using your environment variables.  [Read more](https://github.com/dwyl/learn-environment-variables/blob/master/README.md) for instructions.
+
+# Get Content
+
+Now you're ready to to start pulling content using our customized rake task from the command line by either running    
+` rake dribbble:get_recent `
+Or you may use the included cron task to have this task automated ot whatever timeframe you like.  Simply go to the `Be-Constructive/clock.rb` and adjust the metrics accordingly. It is suprising how simple this task has become thanks to the Clockwork gem.  After modifying the cron task you'll want to run:
+` clockwork clock.rb ` 
+
+After your first rake task has successfully completed, you'll need to populate your database with this new content:
+` rake db:seed:dump `
+
+# Launch and Enjoy!
+
+Ensure that your Postgresql server is running and start your server from the command line:
+` rails s `
+
+In your browser visit the `localhost` address identified in your terminal, typically this is `localhost:3000`.
+
+
