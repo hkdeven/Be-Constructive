@@ -4,6 +4,8 @@ Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive w
 
 Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided and setup instructions below to run your own version of this dynamic application.
 
+![screenshothomepage](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.09%20PM.png?raw=true)
+
 ## THE PROBLEM
 >The US accounts for 25% of the world's prison population, spending between $60-70k on each prisoner annually (5x more than higher education). After one year from release, 75% are unemployed and over 60% will return to prison. [The Last Mile](http://thelastmile.org/) is an organization that has been providing computer programming skills to inmates for the last five years. The recidivism rate for their students is 0%. Not one former inmate has returned to jail upon release.
 
