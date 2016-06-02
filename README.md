@@ -75,13 +75,13 @@ Ensure that your Postgresql server is running and start your server from the com
 In your browser visit the `localhost` address identified in your terminal, typically this is `localhost:3000`.
 
 ## Screenshots of the Application
-
+--------------------------------------Front page   
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.27%20PM.png?raw=true)
---------------------------------------    
+--------------------------------------Front page    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.48%20PM.png?raw=true)
---------------------------------------    
+--------------------------------------Front page    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.13%20PM.png?raw=true)
---------------------------------------    
+--------------------------------------Designer profile page    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.45%20PM.png?raw=true)
 --------------------------------------    
 ![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.06%20PM.png?raw=true)
