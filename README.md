@@ -1,6 +1,8 @@
 # CONSTRUCTIVE | empowered creativity  ![logo](http://s32.postimg.org/rs2i3yxfp/php_R89d_YEAM.jpg)
 
-Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.
+Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.    
+
+Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided and setup instructions below to run your own version of this dynamic application.
 
 ## THE PROBLEM
 >The US accounts for 25% of the world's prison population, spending between $60-70k on each prisoner annually (5x more than higher education). After one year from release, 75% are unemployed and over 60% will return to prison. [The Last Mile](http://thelastmile.org/) is an organization that has been providing computer programming skills to inmates for the last five years. The recidivism rate for their students is 0%. Not one former inmate has returned to jail upon release.
@@ -18,3 +20,33 @@ Lacking access to the internet, this program was missing a developer-oriented de
 For more information about The Last Mile, we encourage you to visit [thelastmile.org](http://thelastmile.org/).    
 
 
+# Setup Instructions
+Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided to setup your own version of this dynamic application.
+
+# Preparing Your Environment
+
+Starting from your local terminal, make a clone of the repo:
+
+```ruby
+git clone https://github.com/hkdeven/Be-Constructive.git
+```
+
+Ensure the following gems into your gemfile and run ` bundle install ` from the command line.
+
+```ruby
+gem 'httparty'
+gem 'seed_dump'
+gem 'clockwork'
+gem "paperclip", "~> 5.0.0.beta1"
+gem 'rails_12factor'
+```
+Save your file and run ` bundle install ` from the command line.    
+
+Then be sure ot migrate:
+```ruby
+rake db:migrate
+```
+
+# The Dribbble API
+
+A majority of the content is compiled using the Dribbble API. Please note that you must register your application and authenticate with either OAuth or your API client access token when making requests. Follow the details outlined in depth at[developer.dribbble.com](http://developer.dribbble.com/v1/).
