@@ -1,8 +1,12 @@
-# CONSTRUCTIVE | empowered creativity  ![logo](http://s32.postimg.org/rs2i3yxfp/php_R89d_YEAM.jpg)
+# CONSTRUCTIVE | empowered creativity
 
 Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.    
 
 Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided and setup instructions below to run your own version of this dynamic application.
+
+--------------------------------------
+![screenshothomepage](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.09%20PM.png?raw=true)    
+--------------------------------------
 
 ## THE PROBLEM
 >The US accounts for 25% of the world's prison population, spending between $60-70k on each prisoner annually (5x more than higher education). After one year from release, 75% are unemployed and over 60% will return to prison. [The Last Mile](http://thelastmile.org/) is an organization that has been providing computer programming skills to inmates for the last five years. The recidivism rate for their students is 0%. Not one former inmate has returned to jail upon release.
@@ -69,6 +73,39 @@ Ensure that your Postgresql server is running and start your server from the com
 ` rails s `
 
 In your browser visit the `localhost` address identified in your terminal, typically this is `localhost:3000`.
+
+## Screenshots of the Application
+--------------------------------------   
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.27%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.44.48%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.13%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.45.45%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.06%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.25%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.39%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.46.55%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.47.04%20PM.png?raw=true)
+--------------------------------------
+
+![screenshot](https://github.com/hkdeven/Be-Constructive/blob/master/app/assets/images/Screen%20Shot%202016-06-02%20at%204.47.19%20PM.png?raw=true)
+--------------------------------------    
 
 ## About Constructive
 ![logo](http://s33.postimg.org/xxaj6bl7z/master_logo.png)    
