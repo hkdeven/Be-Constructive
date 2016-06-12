@@ -13,7 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap.js
-//= require dribs.js
-//= require dribs2.js
 //= require_tree .
