@@ -111,10 +111,8 @@ In your browser visit the `localhost` address identified in your terminal, typic
 ![logo](http://s33.postimg.org/xxaj6bl7z/master_logo.png)    
 Be inspired, be CONSTRUCTIVE.    
 
-Constructive is maintained and funded by the students at [Wyncode Academy](https://wyncode.co/).    
-We love open source software!    
-Hire us for your next creative inspiration:    
-[Deven Blackburn] & [Deri Cleland]
+Constructive is maintained and funded by DB Consulting, LLC.    
+We love open source software  | Hire us for your next creative inspiration     
+[Deven Blackburn]
 
 [Deven Blackburn]: https://www.linkedin.com/in/devenblackburn
-[Deri Cleland]: https://www.linkedin.com/in/deri-cleland-74494441
