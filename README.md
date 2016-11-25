@@ -115,4 +115,4 @@ Constructive is maintained and funded by DB Consulting, LLC.
 We love open source software  | Hire us for your next creative inspiration     
 [Deven Blackburn]
 
-[Deven Blackburn]: https://www.linkedin.com/in/devenblackburn
+[Deven Blackburn]: http://www.makecodenotwar.co/
