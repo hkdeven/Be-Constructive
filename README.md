@@ -1,6 +1,6 @@
 # CONSTRUCTIVE | empowered creativity
 
-Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.    
+Created for developers seeking design inspiration, ***CONSTRUCTIVE*** is a fully-responsive web app of the influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.    
 
 Because of the offline nature of this application, we regret that we cannot yet provide a live demo.  However, you are welcome to use the source code provided and setup instructions below to run your own version of this dynamic application.
 
@@ -112,7 +112,7 @@ In your browser visit the `localhost` address identified in your terminal, typic
 Be inspired, be CONSTRUCTIVE.    
 
 Constructive is maintained and funded by DB Consulting, LLC.    
-We love open source software  | Hire us for your next creative inspiration     
+We love open source software  | Hire us for your next project     
 [Deven Blackburn]
 
 [Deven Blackburn]: http://www.makecodenotwar.co/
